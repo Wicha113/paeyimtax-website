@@ -5,15 +5,34 @@
 // ใส่ URL endpoint ที่ใช้เก็บข้อมูลฟอร์ม (เช่น Google Apps Script, Formspree ฯลฯ)
 const FORM_ENDPOINT = "https://YOUR_FORM_ENDPOINT_HERE";
 
-// ใส่ลิงก์ชำระเงินของแต่ละสินค้า
+// ถ้ายังไม่ใช้ลิงก์จ่ายเงินจริง สามารถคอมเมนต์ส่วนนี้ไว้ก่อนได้
+// const PAYMENT_LINKS = {
+//   course: "https://...", // ลิงก์จ่ายเงินคอร์ส
+//   ebook: "https://..."   // ลิงก์จ่ายเงิน E-book
+// };
 
 // ----------------------
-// โค้ดทำงานกับฟอร์ม
+// โค้ดหลัก ทำงานหลัง DOM โหลดเสร็จ
 // ----------------------
-
 document.addEventListener("DOMContentLoaded", () => {
+  // =========================
+  // 1) เมนูมือถือ (hamburger)
+  // =========================
+  const menuBtn = document.getElementById("mobile-menu");
+  const navMenu = document.getElementById("nav-menu");
+
+  // เช็กก่อนว่ามี element จริงไหม (บางหน้าจะไม่มี navbar)
+  if (menuBtn && navMenu) {
+    menuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  }
+
+  // =========================
+  // 2) ฟอร์ม checkout (ไปหน้าชำระเงิน)
+  // =========================
   const form = document.getElementById("checkout-form");
-  if (!form) return; // ถ้าไม่มีฟอร์มในหน้านั้นก็ไม่ต้องทำอะไร
+  if (!form) return; // ถ้าในหน้านี้ไม่มีฟอร์ม ก็จบแค่นี้
 
   const messageEl = document.getElementById("form-message");
 
@@ -36,13 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (!PAYMENT_LINKS[product]) {
+    // (ถ้ายังไม่ได้ใช้ PAYMENT_LINKS จริง ๆ ให้ตัดบล็อกนี้ออกไปก่อนก็ได้)
+    /*
+    if (!PAYMENT_LINKS || !PAYMENT_LINKS[product]) {
       if (messageEl) {
         messageEl.textContent = "ยังไม่ได้ตั้งค่าลิงก์ชำระเงินสำหรับสินค้านี้";
         messageEl.style.color = "#f97316";
       }
       return;
     }
+    */
 
     // แจ้งสถานะกำลังบันทึก
     if (messageEl) {
@@ -68,20 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     } catch (err) {
-      // ถ้าบันทึกข้อมูลไม่ได้ เราก็ยังพาลูกค้าไปหน้าจ่ายเงินตามปกติ
       console.error("ส่งข้อมูลฟอร์มไม่สำเร็จ แต่จะพาไปหน้าชำระเงินต่อ", err);
     }
 
-    
     // ไปหน้าชำระเงินในเว็บ พร้อมบอกว่าเป็นสินค้าอะไร
     window.location.href = "payment.html?product=" + encodeURIComponent(product);
-
   });
 });
-const menuBtn = document.getElementById("mobile-menu");
-const navMenu = document.getElementById("nav-menu");
-
-menuBtn.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-});
-

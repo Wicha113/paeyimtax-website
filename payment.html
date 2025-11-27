@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ชำระเงินค่าปรึกษาภาษี – แป๊ะยิ้มเล่าเรื่อง</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="logo"
+             onclick="window.location.href='index.html'"
+             style="cursor:pointer">
+          แป๊ะยิ้มเล่าเรื่อง
+        </div>
+        <nav class="nav-links">
+          <a href="index.html#services">บริการ</a>
+          <a href="index.html#offers">คอร์สเรียน &amp; E-book</a>
+          <a href="index.html#articles">บทความภาษี</a>
+          <a href="index.html#testimonials">รีวิวลูกค้า</a>
+          <a href="booking.html" class="btn-nav">จองปรึกษาภาษี</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAYMENT SECTION -->
+  <section class="payment-section">
+    <div class="container">
+
+      <!-- ส่วนหัว -->
+      <div class="payment-header">
+        <h1>ขั้นตอนการชำระเงิน</h1>
+        <p>
+          กรุณาตรวจสอบข้อมูลการจองด้านล่าง จากนั้นโอนเงินตามช่องทางที่สะดวก
+          และส่งสลิปให้ทีมงานทาง LINE OA เพื่อยืนยันคิวปรึกษา
+        </p>
+      </div>
+
+      <div class="payment-grid">
+
+        <!-- สรุปรายละเอียดการจอง -->
+        <div class="payment-card">
+          <h2>สรุปรายละเอียดการจอง</h2>
+          <dl class="payment-summary">
+            <div>
+              <dt>ชื่อ–นามสกุล</dt>
+              <dd id="summary-name">-</dd>
+            </div>
+            <div>
+              <dt>ช่องทางติดต่อ</dt>
+              <dd id="summary-contact">-</dd>
+            </div>
+            <div>
+              <dt>อีเมล</dt>
+              <dd id="summary-email">-</dd>
+            </div>
+            <div>
+              <dt>แพ็กเกจที่เลือก</dt>
+              <dd id="summary-package">-</dd>
+            </div>
+            <div>
+              <dt>วันที่สะดวก</dt>
+              <dd id="summary-date">-</dd>
+            </div>
+            <div>
+              <dt>ช่วงเวลาที่สะดวก</dt>
+              <dd id="summary-time">-</dd>
+            </div>
+            <div>
+              <dt>รายละเอียดเพิ่มเติม</dt>
+              <dd id="summary-details">-</dd>
+            </div>
+            <div class="payment-price-row">
+              <dt>จำนวนเงินที่ต้องชำระ</dt>
+              <dd id="summary-price">-</dd>
+            </div>
+          </dl>
+          <p class="payment-note">
+            *หากข้อมูลผิดพลาด สามารถกลับไปแก้ไขได้ที่หน้า
+            <a href="booking.html">จองคิวปรึกษาภาษี</a>
+          </p>
+        </div>
+
+        <!-- ช่องทางชำระเงิน -->
+        <div class="payment-card">
+          <h2>ช่องทางการชำระเงิน</h2>
+
+          <div class="payment-method">
+            <h3>1. โอนผ่าน PromptPay</h3>
+            <p>สแกน QR ด้านล่าง หรือใช้หมายเลขพร้อมเพย์</p>
+
+            <!-- เปลี่ยน path รูปให้ตรงกับของเด่น -->
+            <div class="payment-qr-wrapper">
+              <img src="assets\css/img/qr-consult.png"
+                   alt="QR PromptPay แป๊ะยิ้มเล่าเรื่อง"
+                   class="payment-qr" />
+            </div>
+
+            <p class="payment-pp-number">
+              หมายเลข PromptPay: <strong>แสกนที่ qr code หรือ โอนชำระตามวิธีที่ 2 ได้เลยครับ</strong>
+            </p>
+          </div>
+
+          <div class="payment-method">
+            <h3>2. โอนเข้าบัญชีธนาคาร</h3>
+            <ul class="payment-bank-list">
+              <li>
+                <strong>ธนาคารกรุงไทย</strong><br />
+                เลขที่บัญชี: <strong>7220535058</strong><br />
+                ชื่อบัญชี: <strong>วิชา เอี่ยมผดุง</strong>
+              </li>
+              <!-- ถ้ามีหลายบัญชีเพิ่ม li ได้เลย -->
+            </ul>
+          </div>
+
+          <div class="payment-after">
+            <h3>หลังโอนเสร็จแล้วทำอย่างไร?</h3>
+            <ol>
+              <li>บันทึกสลิปการโอนเงิน</li>
+              <li>กดปุ่มด้านล่างเพื่อเพิ่มเพื่อน LINE OA</li>
+              <li>ส่งสลิป + แจ้งชื่อ / แพ็กเกจ / วันที่สะดวก ให้ทีมงาน</li>
+            </ol>
+
+            <a class="btn-line"
+               href="https://line.me/R/ti/p/@wicha"
+               target="_blank">
+              เพิ่มเพื่อน LINE OA เพื่อส่งสลิป
+            </a>
+
+            <p class="payment-note">
+              ทีมงานจะตรวจสอบยอดและยืนยันคิวปรึกษาภายใน 24 ชั่วโมงทำการ
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">แป๊ะยิ้มเล่าเรื่อง</div>
+          <div class="footer-slogan">รู้มาก จ่ายน้อย</div>
+          <div class="footer-contact">ติดต่อเรา Line ID : @wicha (มี @ )</div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#services">บริการ</a>
+          <a href="index.html#offers">คอร์ส &amp; E-book</a>
+          <a href="index.html#articles">บทความ</a>
+          <a href="booking.html">จองคิว</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 แป๊ะยิ้มเล่าเรื่อง. สงวนลิขสิทธิ์.</div>
+        <div class="footer-social">
+          <span>✉</span>
+          <span>f</span>
+          <span>𝕋</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS สรุปค่าจาก query string -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+
+      const name    = params.get('name')    || '-';
+      const contact = params.get('contact') || '-';
+      const email   = params.get('email')   || '-';
+      const pkg     = params.get('package') || '';
+      const date    = params.get('date')    || '-';
+      const time    = params.get('time')    || '-';
+      const details = params.get('details') || '-';
+
+      let packageText = '-';
+      let priceText   = '-';
+
+      if (pkg === 'normal') {
+        packageText = 'ปรึกษาภาษีรายชั่วโมง (นัดล่วงหน้า 1–3 วัน)';
+        priceText   = '1,500 บาท';
+      } else if (pkg === 'urgent') {
+        packageText = 'ปรึกษาภาษีแบบด่วน (ภายในวันนี้)';
+        priceText   = '2,000 บาท';
+      }
+
+      document.getElementById('summary-name').textContent    = name;
+      document.getElementById('summary-contact').textContent = contact;
+      document.getElementById('summary-email').textContent   = email || '-';
+      document.getElementById('summary-package').textContent = packageText;
+      document.getElementById('summary-date').textContent    = date;
+      document.getElementById('summary-time').textContent    = time;
+      document.getElementById('summary-details').textContent = details || '-';
+      document.getElementById('summary-price').textContent   = priceText;
+    })();
+  </script>
+
+</body>
+</html>

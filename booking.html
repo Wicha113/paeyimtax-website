@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>จองคิวปรึกษาภาษี – แป๊ะยิ้มเล่าเรื่อง</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="logo">แป๊ะยิ้มเล่าเรื่อง</div>
+        <nav class="nav-links">
+          <a href="index.html#services">บริการ</a>
+          <a href="index.html#offers">คอร์สเรียน &amp; E-book</a>
+          <a href="index.html#articles">บทความภาษี</a>
+          <a href="index.html#testimonials">รีวิวลูกค้า</a>
+          <button class="btn-nav">
+            จองปรึกษาภาษี
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- BOOKING SECTION – ฟอร์มจองคิวปรึกษา -->
+  <section class="booking-section">
+    <div class="container">
+      <div class="booking-header">
+        <h1>จองคิวปรึกษาภาษีกับแป๊ะยิ้ม</h1>
+        <p>
+          เลือกแพ็กเกจที่เหมาะกับคุณ แล้วกรอกข้อมูลให้ครบ ทีมงานจะติดต่อกลับไปเพื่อยืนยันคิว
+          และแจ้งรายละเอียดการชำระเงิน
+        </p>
+        <div class="booking-tagline">
+          รู้มาก จ่ายน้อย – เริ่มจากการวางแผนภาษีให้ถูกต้อง
+        </div>
+      </div>
+
+      <div class="booking-grid">
+        <!-- ฝั่งข้อมูลแพ็กเกจ -->
+        <div class="booking-info">
+          <h2>เลือกแพ็กเกจที่ใช่สำหรับคุณ</h2>
+          <p>
+            คุณสามารถเลือกได้ทั้งการนัดปรึกษาล่วงหน้าหรือคิวด่วนภายในวันนี้
+            ขึ้นกับความเร่งด่วนของปัญหาและเวลาที่สะดวก
+          </p>
+          <span class="booking-pill">คุยตัวต่อตัวผ่านวิดีโอคอล 60 นาที</span>
+
+          <div class="booking-plans">
+            <div class="booking-plan-card">
+              <div class="booking-plan-title">ปรึกษาภาษีรายชั่วโมง</div>
+              <div class="booking-plan-price">1,500 บาท / 60 นาที</div>
+              <div class="booking-plan-note">นัดล่วงหน้า 1–3 วัน เหมาะกับเคสที่ไม่เร่งด่วน</div>
+            </div>
+            <div class="booking-plan-card">
+              <div class="booking-plan-title">ปรึกษาภาษีแบบด่วน (ภายในวันนี้)</div>
+              <div class="booking-plan-price">2,000 บาท / 60 นาที</div>
+              <div class="booking-plan-note">
+                สำหรับเคสที่ต้องตัดสินใจวันนี้ – ขึ้นกับคิวว่างของแต่ละวัน
+              </div>
+            </div>
+          </div>
+
+          <p style="margin-top:16px; font-size:0.85rem; color:#9ca3af;">
+            หลังส่งแบบฟอร์มแล้ว ระบบจะพาไปหน้าชำระเงิน กรุณาชำระเงินและรอยืนยันคิวจากทีมงาน
+          </p>
+        </div>
+
+        <!-- ฝั่งฟอร์มจองคิว -->
+        <div class="booking-form-card">
+          <div class="booking-form-title">แบบฟอร์มจองคิวปรึกษาภาษี</div>
+          <div class="booking-form-sub">
+            หลังกรอกแบบฟอร์มและชำระเงินเรียบร้อย ทีมงานจะติดต่อกลับไปทาง LINE / โทร
+            เพื่อยืนยันคิวและส่งรายละเอียดเพิ่มเติม
+          </div>
+
+          <!-- แก้ตรงนี้: ให้ส่งไป payment.html -->
+          <form id="consult-form" action="payment.html" method="get">
+            <!-- ไว้บอกฝั่ง payment ว่ามาจากฟอร์มจองคิว -->
+            <input type="hidden" name="type" value="consult">
+
+            <div class="form-field">
+              <label for="name">ชื่อ–นามสกุล *</label>
+              <input type="text" id="name" name="name" required placeholder="เช่น วิชา เอี่ยมผดุง">
+            </div>
+
+            <div class="form-field">
+              <label for="contact">ช่องทางติดต่อหลัก (LINE ID / เบอร์โทร) *</label>
+              <input type="text" id="contact" name="contact" required placeholder="เช่น LINE: @paeyimtax หรือ 08x-xxx-xxxx">
+            </div>
+
+            <div class="form-field">
+              <label for="email">อีเมล (ถ้ามี)</label>
+              <input type="email" id="email" name="email" placeholder="example@email.com">
+            </div>
+
+            <div class="form-field">
+              <label>เลือกแพ็กเกจที่ต้องการ *</label>
+              <div class="booking-radio-group">
+                <label class="booking-radio-option">
+                  <input type="radio" name="package" value="normal" required>
+                  <div>
+                    <div class="booking-radio-label-title">ปรึกษารายชั่วโมง 1,500 บาท</div>
+                    <div class="booking-radio-label-note">นัดล่วงหน้า 1–3 วัน เหมาะสำหรับการวางแผนล่วงหน้า</div>
+                  </div>
+                </label>
+                <label class="booking-radio-option">
+                  <input type="radio" name="package" value="urgent">
+                  <div>
+                    <div class="booking-radio-label-title">ปรึกษาแบบด่วน 2,000 บาท</div>
+                    <div class="booking-radio-label-note">คิวด่วนภายในวันนี้ ขึ้นกับเวลาที่ว่างในแต่ละวัน</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="date">วันที่สะดวก (ประมาณการ) *</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-field">
+              <label for="time">ช่วงเวลาที่สะดวก *</label>
+              <input type="text" id="time" name="time" required placeholder="เช่น 19.00–21.00 น.">
+            </div>
+
+            <div class="form-field">
+              <label for="details">เล่าเคสภาษีคร่าว ๆ</label>
+              <textarea id="details" name="details" placeholder="เช่น รายได้ออนไลน์หลายทาง ไม่แน่ใจว่าต้องยื่นแบบไหน / กังวลเรื่องตรวจย้อนหลัง ฯลฯ"></textarea>
+            </div>
+
+            <button type="submit" class="btn-booking-submit">
+              ไปหน้าชำระเงิน
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">แป๊ะยิ้มเล่าเรื่อง</div>
+          <div class="footer-slogan">รู้มาก จ่ายน้อย</div>
+          <div class="footer-contact">ติดต่อเรา Line ID : @wicha (มี @ )</div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#services">บริการ</a>
+          <a href="index.html#offers">คอร์ส &amp; E-book</a>
+          <a href="index.html#articles">บทความ</a>
+          <a href="booking.html">จองคิว</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 แป๊ะยิ้มเล่าเรื่อง. สงวนลิขสิทธิ์.</div>
+        <div class="footer-social">
+          <span>✉</span>
+          <span>f</span>
+          <span>𝕋</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
